@@ -1,4 +1,3 @@
-
 def path_time(streets):
     path_time = 0
     for street in streets:
@@ -23,10 +22,11 @@ def main():
             STREETS[NAME] = {
                         'BEGIN': B,
                         'END': E,
-                        'LENGTH': L
+                        'LENGTH': L,
+                        'SCORE': 0
                     }
             NAMES.append(NAME)
-        print(STREETS, NAMES)
+        #print(STREETS, NAMES)
                         
         CARS = []
         for i in range(V):
@@ -35,9 +35,55 @@ def main():
             P = int(line[0])
             CAR_STREETS = line.split(' ')[1:]
             CARS.append(CAR_STREETS)
-        print(CARS)
+        #print(CARS)
+        
+        scores = []
+        for roads in CARS:
+            for street in roads[:len(roads) - 1]:
+                #print(street)
+                STREETS[street]['SCORE'] += 1
+            #print(street, "has a score of", STREETS[street]['SCORE'])
+        
+        #for i in NAMES:
+            #print(i)
+            #print(i, "has a score of", STREETS[i]['SCORE'])
+        
+        
+        intersections = [[0, []] for _ in range(I)]
+        print(intersections)
+        #f = FALSE
+        count = 0
+        
+        
+        for road in NAMES:
+            if count == I:
+                break
+            if STREETS[road]['SCORE'] != 0 and not(intersections[STREETS[road]['END']][0]):
+                print("IN")
+                count += 1
+                intersections[STREETS[road]['END']][0] = 1
+                print(intersections)
+        for road in NAMES:
+            if STREETS[road]['SCORE'] != 0:
+                intersections[STREETS[road]['END']][1].append(road)
+            if intersections[STREETS[road]['END']][0] == 0:
+                intersections.pop(STREETS[road]['END'])
+        print(intersections)
+        
+        #print(count)
+        #with open("out.txt", "w") as f:
+        #    f.write(count)
             
-
+                
+        
+                
+            
+            
+        
+            
+            
+            
+            
 
 if __name__ == "__main__":
     main()
