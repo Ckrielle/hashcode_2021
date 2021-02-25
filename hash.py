@@ -9,7 +9,6 @@ def main():
     file = "f.txt"
     with open(file, "r") as f:
         data = [i.strip() for i in f.readlines()]
-        #print(data)
         k = 0
         D, I, S, V, F = map(int, data[0].split(' '))
         STREETS = {}
@@ -26,7 +25,6 @@ def main():
                         'SCORE': 0
                     }
             NAMES.append(NAME)
-        #print(STREETS, NAMES)
                         
         CARS = []
         for i in range(V):
@@ -35,18 +33,12 @@ def main():
             P = int(line[0])
             CAR_STREETS = line.split(' ')[1:]
             CARS.append(CAR_STREETS)
-        #print(CARS)
         
         scores = []
         for roads in CARS:
             for street in roads[:len(roads) - 1]:
-                #print(street)
                 STREETS[street]['SCORE'] += 1
-            #print(street, "has a score of", STREETS[street]['SCORE'])
-        
-        #for i in NAMES:
-            #print(i)
-            #print(i, "has a score of", STREETS[i]['SCORE'])
+       
         
         
         intersections = [[0, []] for _ in range(I)]
