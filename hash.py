@@ -6,7 +6,7 @@ def path_time(streets):
 
 
 def main():
-    file = "a.txt"
+    file = "f.txt"
     with open(file, "r") as f:
         data = [i.strip() for i in f.readlines()]
         #print(data)
@@ -59,20 +59,39 @@ def main():
             if count == I:
                 break
             if STREETS[road]['SCORE'] != 0 and not(intersections[STREETS[road]['END']][0]):
-                print("IN")
+                #print("IN")
                 count += 1
                 intersections[STREETS[road]['END']][0] = 1
-                print(intersections)
+                #print(intersections)
         for road in NAMES:
             if STREETS[road]['SCORE'] != 0:
                 intersections[STREETS[road]['END']][1].append(road)
-            if intersections[STREETS[road]['END']][0] == 0:
-                intersections.pop(STREETS[road]['END'])
+            #if intersections[STREETS[road]['END']][0] == 0:
+            #    intersections.pop(STREETS[road]['END'])
         print(intersections)
         
-        #print(count)
-        #with open("out.txt", "w") as f:
-        #    f.write(count)
+        print(count)
+        with open("out.txt", "w") as f:
+            f.write(str(count))
+            f.write("\n")
+            for inter in intersections:
+                if inter[0]:
+                    f.write(str(STREETS[inter[1][0]]['END']))
+                    f.write("\n")
+                    f.write(str(len(inter[1])))
+                    f.write("\n")
+                    inter[1].sort(reverse=True)#, reverse=True)
+                    for i in range(len(inter[1])):
+                        f.write(inter[1][i])
+                        f.write(" ")
+                        f.write("1")
+                        f.write("\n")
+                    
+            #for i in intersections:
+                
+                    
+                
+                
             
                 
         
