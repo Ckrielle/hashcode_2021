@@ -51,8 +51,6 @@ def main():
         for road in NAMES:
             if STREETS[road]['SCORE'] != 0:
                 intersections[STREETS[road]['END']][1].append(road)
-            #if intersections[STREETS[road]['END']][0] == 0:
-            #    intersections.pop(STREETS[road]['END'])
         print(intersections)
         
         print(count)
