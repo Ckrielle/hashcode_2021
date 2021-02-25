@@ -1,10 +1,3 @@
-def path_time(streets):
-    path_time = 0
-    for street in streets:
-        path_time += street[3]
-    return path_time
-
-
 def main():
     file = "f.txt"
     with open(file, "r") as f:
