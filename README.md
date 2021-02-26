@@ -6,3 +6,10 @@ this sounds incredible, and it's sad it's not real because of a stupid mistake. 
 we accomplished. Till next year
 
 P.S. I wish for hash.py to remain as is simply for its meme value
+
+
+![Final Ranking](./docs/pictures/final_rank)
+
+![Analytic Score](./docs/pictures/point_scoring)
+
+![Look we are 76th](./docs/pictures/76_worldwide_babyyyy)
