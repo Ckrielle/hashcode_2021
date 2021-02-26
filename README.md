@@ -8,8 +8,8 @@ we accomplished. Till next year
 P.S. I wish for hash.py to remain as is simply for its meme value
 
 
-![Final Ranking](./docs/pictures/final_rank)
+![Final Ranking](./docs/pictures/final_rank.png)
 
-![Analytic Score](./docs/pictures/point_scoring)
+![Analytic Score](./docs/pictures/point_scoring.png)
 
-![Look we are 76th](./docs/pictures/76_worldwide_babyyyy)
+![Look we are 76th](./docs/pictures/76_worldwide_babyyyy.png)
